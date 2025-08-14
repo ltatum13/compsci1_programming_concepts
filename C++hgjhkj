@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+   int input1;
+   int input2;
+   bool isInput2 = false;
+
+   cin >> input1;
+   cin >> input2;
+   
+   if (input2 < input1) {
+      cout << "Second integer can't be less than the first.";
+   }
+
+   else {
+       while (input1 <= input2) {
+           if (input1 != input2) {
+               isInput2 = false;
+               
+               if (isInput2 == false) {
+                    cout << input1 << " ";
+                    input1 = input1 + 5; 
+                    cin >> input1;
+                }
+      
+                if (isInput2 == true){
+                    cout << input1 << endl;
+                }
+            }
+     }
+   }
+
+   return 0;
+}

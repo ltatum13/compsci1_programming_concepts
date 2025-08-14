@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+   int highwayNumber;
+   int primary_number;
+   int odd_or_even;
+   int auxiliary_number;
+   int service_number;
+   
+   cin >> highwayNumber;
+
+   if (highwayNumber >= 1 and highwayNumber <= 99) {
+      primary_number = highwayNumber;
+      odd_or_even = highwayNumber % 2;
+      if (odd_or_even == 0) {
+        cout << "I-" << primary_number << " is primary, going east/west." << endl;
+      }
+    else {
+        cout << "I-" << primary_number << " is primary, going north/south." << endl;
+    }
+   }
+
+    else if (highwayNumber >= 100 and highwayNumber <= 999) {
+        auxiliary_number = highwayNumber;
+        service_number = auxiliary_number % 100;
+        if (auxiliary_number == 200) {
+        cout << auxiliary_number << " is not a valid interstate highway number." << endl;
+        }
+        else {
+            if ((service_number % 2) == 0) {
+            cout << "I-" << auxiliary_number << " is auxiliary, serving I-" << service_number << ", going east/west." << endl;
+            }
+            else {
+            cout << "I-" << auxiliary_number << " is auxiliary, serving I-" << service_number << ", going north/south." << endl;
+            }
+        }
+    }
+
+    else {
+        cout << highwayNumber << " is not a valid interstate highway number." << endl;
+    }
+
+   return 0;
+}
